@@ -1,0 +1,295 @@
+body {
+  font-family: sans-serif;
+  margin: 0; /* Add margin reset */
+}
+
+h1 {
+  color: rgb(0, 0, 0);
+  margin: 0; /* Adjust margin */
+  font-size: 1.5rem; /* Adjust font size */
+}
+
+h2 {
+  margin-top: 2em;
+}
+
+p {
+  line-height: 1.6;
+}
+
+header {
+  background-color: #f0f0f0;
+  padding: 1rem;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative; /* For positioning the nav */
+}
+
+footer {
+  background-color: #333;
+  color: white;
+  padding: 2rem 1rem; /* More padding */
+  text-align: center;
+}
+
+.footer-content {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Changed to left-align */
+  gap: 1rem;
+}
+
+.footer-content p {
+  margin: 0;
+}
+
+.copyright {
+  align-self: center;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Changed to left-align */
+  gap: 1rem;
+}
+
+.contact-info p {
+  margin: 0;
+}
+
+.contact-info a {
+  color: #ffffff; /* Light blue for links */
+  text-decoration: none;
+}
+
+.contact-info a:hover {
+  text-decoration: underline;
+}
+
+.email-link a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.social-links a { /* Used in Footer */
+  color: rgb(255, 255, 255); /* Icon color */
+  transition: color 0.3s;
+  display: inline-flex; /* Align icon and text */
+  align-items: center;
+  gap: 0.5em; /* Add space between icon and text */
+  text-decoration: none;
+}
+
+.social-links a:hover {
+  color: #a0cff0; /* Light blue on hover */
+}
+
+.social-links a span {
+  color: #ffffff; /* Light blue, same as email link */
+}
+
+.social-links a:hover span {
+  text-decoration: underline;
+}
+
+.social-links svg {
+  width: 24px;
+  height: 24px;
+}
+
+main {
+  max-width: 800px; /* Constrain content width */
+  margin: 0 auto; /* Center the content */
+  padding: 1rem;
+  padding-bottom: 2rem; /* Reset bottom padding */
+}
+
+main h1 {
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 0.5em;
+  margin-bottom: 1em;
+}
+
+main ul {
+  list-style-type: disc;
+  padding-left: 1.5em; /* Adjust this value if the indent is not correct */
+}
+
+.aisatu{
+  margin-bottom: 1em;
+}
+
+.margin-botom{
+  margin-bottom: 1em;
+}
+
+/* Hamburger Menu Icon */
+.hamburger-menu {
+  width: 30px;
+  height: 24px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  z-index: 100; /* Ensure it's above other content */
+}
+
+.hamburger-menu span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background-color: #333;
+  border-radius: 3px;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Navigation Menu */
+.global-nav {
+  display: none; /* Hidden by default */
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: white;
+  border: 1px solid #ccc;
+  width: 200px;
+  z-index: 99;
+}
+
+.global-nav.active {
+  display: block; /* Show when active */
+}
+
+.global-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.global-nav li a {
+  display: block;
+  padding: 1rem;
+  text-decoration: none;
+  color: #333;
+  border-bottom: 1px solid #eee;
+}
+
+.global-nav li a:hover {
+  background-color: #f0f0f0;
+}
+
+/* Hamburger animation */
+.hamburger-menu.active span:nth-child(1) {
+  transform: translateY(10.5px) rotate(45deg);
+}
+
+.hamburger-menu.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger-menu.active span:nth-child(3) {
+  transform: translateY(-10.5px) rotate(-45deg);
+}
+
+/* Social Icon Style */
+.social-icon { /* Used in Header Nav */
+  display: flex;
+  align-items: center;
+  gap: 0.5em; /* Add space between icon and text */
+}
+
+/* Prevent SVGs in links from capturing clicks */
+.social-icon svg, .email-link svg {
+  pointer-events: none;
+}
+
+/* --- Responsive Styles for Desktop --- */
+@media (min-width: 768px) {
+  /* Hide hamburger menu on desktop */
+  .hamburger-menu {
+    display: none;
+  }
+
+  /* Show navigation on desktop */
+  .global-nav {
+    display: block;
+    position: static; /* Remove absolute positioning */
+    width: auto; /* Allow it to grow */
+    background-color: transparent;
+    border: none;
+  }
+
+  .global-nav ul {
+    display: flex; /* Make nav items horizontal */
+    gap: 1em; /* Add space between nav items */
+  }
+
+  .global-nav li a {
+    border-bottom: none; /* Remove mobile border */
+    padding: 0.5rem 1rem; /* Adjust padding for desktop */
+    border-radius: 5px; /* Optional: rounded corners */
+    transition: background-color 0.3s;
+  }
+
+  .global-nav li a:hover {
+    background-color: #ddd; /* Hover effect for desktop */
+  }
+
+  /* Ensure the active class doesn't hide the nav on desktop */
+  .global-nav.active {
+    display: block;
+  }
+}
+
+/* --- Responsive Styles for Mobile --- */
+@media (max-width: 767px) {
+  header {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  header h1 {
+    font-size: 1.2rem; /* Slightly smaller title on mobile */
+  }
+
+  .global-nav {
+    width: 100%; /* Full width on mobile */
+    right: 0;
+  }
+}
+
+/* Google Form Styles */
+.google_form {
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+.google_form iframe {
+  width: 100%;
+  max-width: 640px; /* フォームの一般的な最大幅 */
+  height: 800px; /* フォームの高さ */
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  display: block; /* 中央揃えのためにblock要素にする */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Signature Block Style */
+.signature-block {
+  text-align: right;
+}
+
+/* Header Logo Style */
+.header-logo {
+  display: inline-block;
+}
+
+.header-logo svg {
+  vertical-align: middle; /* 他要素との縦方向の位置を調整 */
+}
