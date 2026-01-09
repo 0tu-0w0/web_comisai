@@ -3,25 +3,27 @@
   <!-- メタデータ -->
 <head>
   <meta charset="UTF-8">
-  <!-- スマホで文字サイズが正常に表示されるための呪文 -->
-  <meta charset="viewport" content="width=device-width, initial-scale=1">
-
-  <!-- ogpの設定 -->
-  <meta property="og:title" content={% if page.title %}{{ page.title }} - {{ site.title }}{% else %}{{ site.title }} | {{site.description}}{% endif %}>
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="{{ '/' | absolulte_url }}">
-  <meta property="og:image" content="{{ '/assets/images/ogp.png' | absolulte_url }}">
-  <meta property="og:site_name" content="{{ site.title }}">
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:image" content={{ site.url }}/assets/images/twitter_ogp.png>
-  <meta property="og:description" content="{{ page.description }}">
-  <meta property="og:locale" content="jp">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>トップ - むつめ祭同人即売会「コミックさいたま（仮）準備会」</title>
-  
+  <meta name="description" content="2026年のむつめ祭での同人誌即売会開催を目指す「コミックさいたま」の公式サイトです。イベント情報、参加方法、スタッフ募集などをご案内します。">
+
+  <!-- OGP Tags -->
+  <meta property="og:title" content="コミックさいたま（仮）準備会 | むつめ祭同人即売会">
+  <meta property="og:description" content="2026年のむつめ祭での同人誌即売会開催を目指す「コミックさいたま」の公式サイトです。イベント情報、参加方法、スタッフ募集などをご案内します。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://comicsaitama/index.html">
+  <meta property="og:image" content="https://via.placeholder.com/1200x630.png?text=Comic+Saitama">
+  <meta property="og:site_name" content="コミックさいたま（仮）準備会">
+  <meta property="og:locale" content="ja_JP">
+
+  <!-- Twitter Card Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://via.placeholder.com/1200x630.png?text=Comic+Saitama">
+
   <!-- リセットcss：環境依存のデザイン差異を統一するため -->
   <link rel="stylesheet" href="https://unpkg.com/ress@4.0.0/dist/ress.min.css">
   <link rel="stylesheet" href="style.css">
-  <link rel="icon" href="{{ '/assets/images/favicon.png' | absolulte_url }}">
+  <link rel="icon" href="https://comicsaitama/assets/images/favicon.png">
 
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZKEJQ8YVYS"></script>
@@ -30,12 +32,7 @@
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'G-ZKEJQ8YVYS');
-
-    window.SITE_URL = "{{ site.url | escape }}"; //for link_format.js
   </script>
-  <script src="{{ '/assets/js/link_format.js' | absolulte_url }}"></script>
-
-  
 </head>
 <body>
   <header>
@@ -110,7 +107,7 @@
     <div class="footer-content">
       <div class="contact-info">
         <div class="email-link">
-          <a href="mailto:contact@example.com">
+          <a href="mailto:contact@comicsaitama">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
               <path d="M22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6zm-2 0l-8 5-8-5h16zm0 12H4V8l8 5 8-5v10z"/>
             </svg>
